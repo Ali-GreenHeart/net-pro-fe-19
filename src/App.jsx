@@ -1,8 +1,10 @@
+import WebRouting from "./routing"
+
 function App() {
- 
+
   return (
     <>
-       salamlar 
+      <WebRouting />
     </>
   )
 }
