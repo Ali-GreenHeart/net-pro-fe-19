@@ -1,5 +1,6 @@
 import { Container, Grid } from "@mui/material"
 import HomeServiceCard from "../../components/HomeServiceCard"
+import services from "../../mockData/services"
 
 const Home = () => {
     return (
@@ -7,10 +8,10 @@ const Home = () => {
             <Container>
                 <Grid container spacing={3}>
                     {
-                        ['', '', '', '', '', ''].map(() => {
+                        services.map(({ id, body, title }) => {
                             return (
-                                <Grid item xs={12} sm={6} md={4}>
-                                    <HomeServiceCard />
+                                <Grid key={id} item xs={12} sm={6} md={4}>
+                                    <HomeServiceCard body={body} title={title} />
                                 </Grid>
                             )
                         })
