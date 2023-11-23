@@ -18,6 +18,8 @@ import FormHelperText from '@mui/material/FormHelperText';
 import Navigation from "../../components/Navigation"
 import HomePhoto from '../../components/homephoto';
 import Container from '@mui/material/Container';
+import { Stack } from '@mui/material';
+import { ArrowDownward, Home } from '@mui/icons-material';
 
 
 
@@ -33,8 +35,16 @@ export default function Home1stPart() {
     return (
         <>
             <Box sx={{ flexGrow: 1, }} >
-                <AppBar position="static">
-                    <Toolbar sx={{ display: 'flex', flexWrap: 'wrap' }}>
+                <AppBar position="static"
+                    sx={{
+                        ".MuiToolbar-root": {
+                            display: 'flex',
+                            flexWrap: 'wrap',
+                            alignItems: 'center'
+                        }
+                    }}
+                >
+                    <Toolbar>
                         <IconButton
                             size="small"
                             edge="start"
@@ -66,23 +76,26 @@ export default function Home1stPart() {
                                 info@netprogroup.az
                             </Typography>
                         </IconButton>
-                        <Box component={'div'}>
-                            < FacebookIcon sx={{ border: '1px solid white', borderRadius: 2 }} />
-                            < LinkedInIcon sx={{ border: '1px solid white', borderRadius: 2 }} />
-                            < InstagramIcon sx={{ border: '1px solid white', borderRadius: 2 }} />
-                            < WhatsAppIcon sx={{ border: '1px solid white', borderRadius: 2 }} />
-                        </Box>
-                        <div>
-
-                            <FormControl sx={{ m: 1, minWidth: 120, border: '1px solid white', borderRadius: '4px' }}>
-
+                        <Stack gap={0.7} flexDirection="row" >
+                            <FacebookIcon sx={{ border: '1px solid white', borderRadius: 0.5, boxSizing: 'content-box', padding: 0.3 }} />
+                            <LinkedInIcon sx={{ border: '1px solid white', borderRadius: 0.5, boxSizing: 'content-box', padding: 0.3 }} />
+                            <InstagramIcon sx={{ border: '1px solid white', borderRadius: 0.5, boxSizing: 'content-box', padding: 0.3 }} />
+                            <WhatsAppIcon sx={{ border: '1px solid white', borderRadius: 0.5, boxSizing: 'content-box', padding: 0.3 }} />
+                        </Stack>
+                        <Stack flexDirection="row" alignItems="center">
+                            <FormControl sx={{ minWidth: 120, border: '1px solid white', borderRadius: '4px' }}>
                                 <Select
-
-                                    sx={{ color: 'white', borderColor: 'white' }}
+                                    sx={{
+                                        ".MuiSelect-select": {
+                                            py: "10px !important",
+                                        },
+                                        color: 'white', borderColor: 'white'
+                                    }}
                                     value={age}
                                     onChange={handleChange}
                                     displayEmpty
                                     inputProps={{ 'aria-label': 'Without label' }}
+                                    IconComponent={() => <ArrowDownward color="white" />}
                                 >
                                     <MenuItem value="">
                                         <em>1 USD - 1.700 AZN ⏺️</em>
@@ -92,29 +105,38 @@ export default function Home1stPart() {
                                     <MenuItem value={30}>100 USD -</MenuItem>
                                 </Select>
                             </FormControl>
-                            <FormControl sx={{ m: 1, minWidth: 120 }}>
-
+                            <FormControl sx={{
+                                "& fieldset": {
+                                    border: 'none !important',
+                                    outline: "none",
+                                },
+                                minWidth: 120
+                            }}>
                                 <Select
-
-                                    sx={{ color: 'white' }}
+                                    sx={{
+                                        ".MuiSelect-select": {
+                                            py: "10px !important",
+                                        },
+                                        color: 'white',
+                                        border: 'none',
+                                        outline: 'none'
+                                    }}
                                     value={age}
                                     onChange={handleChange}
                                     displayEmpty
                                     inputProps={{ 'aria-label': 'Without label' }}
                                 >
-                                    <MenuItem value="">
-                                        <em>AZ</em>
-                                    </MenuItem>
+                                    <MenuItem value="">AZ</MenuItem>
                                     <MenuItem value={10}>RUS</MenuItem>
                                     <MenuItem value={20}>ENG </MenuItem>
                                     <MenuItem value={30}>UK</MenuItem>
                                 </Select>
                             </FormControl>
-                        </div>
+                        </Stack>
                     </Toolbar>
                 </AppBar>
             </Box>
-            <Box sx={{ bgcolor:'#F4F4F4' }}>
+            <Box sx={{ bgcolor: '#F4F4F4' }}>
                 <Container >
                     <Navigation />
                 </Container>
