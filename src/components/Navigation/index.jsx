@@ -11,25 +11,61 @@ import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import Stack from '@mui/material/Stack';
-import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import Link from '@mui/material/Link';
 import styles from './index.module.css'
 import SearchIcon from '@mui/icons-material/Search';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { useState, useEffect } from 'react'
+import NavItem from './NavItem';
 
-const sections = [  'Əsas səhifə',  'Haqqımızda', 'Məhsullar', 'Xidmətlər və Həllər','Əlaqə']
+const sections = [
+    {
+        to: "/",
+        route: 'Əsas səhifə'
+    },
+    {
+        to: "/about",
+        route: 'Haqqımızda'
+    },
+    {
+        route: 'Məhsullar',
+        subRoutes: [
+            {
+                to: "/products",
+                route: 'Məhsullar',
+            },
+            {
+                to: "/products1",
+                route: '2Məhsullar',
+            },
+            {
+                to: "/products2",
+                route: '3Məhsullar',
+            },
+        ]
+    },
+    {
+        route: 'Xidmətlər və Həllər',
+        subRoutes: [
+            {
+                to: "/services",
+                route: 'Xidmətlər və Həllər',
+            },
+            {
+                to: "/services2",
+                route: '2Xidmətlər və Həllər',
+            },
+            {
+                to: "/services3",
+                route: '3Xidmətlər və Həllər',
+            },
+        ]
+    },
+    {
+        to: "/contact",
+        route: 'Əlaqə'
+    },
+]
 export default function Navigation() {
-    const [isDrop, setIsDrop] = useState(false)
-    const toggleDropdown = (id) => {
-        sections.map((section) => {
-            if (id === 2) {
-                setIsDrop(!isDrop)
-            }
-        })
-        dropdown(id)
-
-    }
 
     return (
         <Box className={styles.navContainer} sx={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap' }}>
@@ -39,14 +75,15 @@ export default function Navigation() {
             <MenuList className={styles.dropdown}>
                 <Stack flexDirection={'row'} flexWrap={'wrap'}>
                     {
-                        sections.map((section, index) => {
+                        sections.map(({ route, subRoutes, to }, index) => {
                             return (
-                                <MenuItem sx={{ position: "relative" }} key={index} onClick={() => toggleDropdown(index)} >
-                                    <Typography variant="body1" color="initial" className={styles.dropbtn}>
-                                        <ArrowRightIcon sx={{ position: 'relative', top: 5 }} /> {section}
-                                        {isDrop ? <KeyboardArrowDownIcon sx={{ position: 'relative', top: '5px' }} /> : ('')}
-                                    </Typography>
-                                </MenuItem>
+                                <NavItem
+                                    to={to}
+                                    key={index}
+                                    styles={styles}
+                                    section={route}
+                                    subRoutes={subRoutes}
+                                />
                             )
                         })
                     }
