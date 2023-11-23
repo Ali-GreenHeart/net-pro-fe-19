@@ -1,5 +1,4 @@
 import * as React from 'react';
-import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
@@ -14,7 +13,7 @@ import MailIcon from '@mui/icons-material/Mail';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
-import FormHelperText from '@mui/material/FormHelperText';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import Navigation from "../../components/Navigation"
 import HomePhoto from '../../components/homephoto';
 import Container from '@mui/material/Container';
@@ -82,7 +81,7 @@ export default function Home1stPart() {
                             <InstagramIcon sx={{ border: '1px solid white', borderRadius: 0.5, boxSizing: 'content-box', padding: 0.3 }} />
                             <WhatsAppIcon sx={{ border: '1px solid white', borderRadius: 0.5, boxSizing: 'content-box', padding: 0.3 }} />
                         </Stack>
-                        <Stack flexDirection="row" alignItems="center">
+                        <Stack flexDirection="row" alignItems="center" my={1}>
                             <FormControl sx={{ minWidth: 120, border: '1px solid white', borderRadius: '4px' }}>
                                 <Select
                                     sx={{
@@ -95,7 +94,7 @@ export default function Home1stPart() {
                                     onChange={handleChange}
                                     displayEmpty
                                     inputProps={{ 'aria-label': 'Without label' }}
-                                    IconComponent={() => <ArrowDownward color="white" />}
+                                    IconComponent={() => <ArrowDownward color="white" style={{cursor:'pointer'}}/>}
                                 >
                                     <MenuItem value="">
                                         <em>1 USD - 1.700 AZN ⏺️</em>
@@ -115,12 +114,17 @@ export default function Home1stPart() {
                                 <Select
                                     sx={{
                                         ".MuiSelect-select": {
-                                            py: "10px !important",
+                                            py: "10px !important"
+                                        },
+                                        "& svg":{
+                                            color:"white"
                                         },
                                         color: 'white',
                                         border: 'none',
-                                        outline: 'none'
+                                        outline: 'none',
+                                        
                                     }}
+                                    IconComponent={() => <ArrowDropDownIcon color="white" style={{cursor:'pointer'}}/>}
                                     value={age}
                                     onChange={handleChange}
                                     displayEmpty

@@ -5,7 +5,8 @@ import MenuList from '@mui/material/MenuList';
 import Stack from '@mui/material/Stack';
 import * as React from 'react';
 import NavItem from './NavItem';
-import styles from './index.module.css';
+import styles from './index.module.css'
+import NetProIcon from '../netProIcon';
 
 const sections = [
     {
@@ -58,10 +59,8 @@ const sections = [
 export default function Navigation() {
 
     return (
-        <Box className={styles.navContainer} sx={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap' }}>
-            <Box sx={{ my: 2 }}>
-                LOGO
-            </Box>
+        <Box className={styles.navContainer} sx={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', p:4}}>
+                 <NetProIcon/>
             <MenuList className={styles.dropdown}>
                 <Stack flexDirection={'row'} flexWrap={'wrap'}>
                     {
