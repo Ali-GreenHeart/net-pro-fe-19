@@ -1,21 +1,11 @@
-import * as React from 'react';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import MenuList from '@mui/material/MenuList';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import IconButton from '@mui/material/IconButton';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
-import Stack from '@mui/material/Stack';
-import Link from '@mui/material/Link';
-import styles from './index.module.css'
 import SearchIcon from '@mui/icons-material/Search';
-import { useState, useEffect } from 'react'
+import Box from '@mui/material/Box';
+import IconButton from '@mui/material/IconButton';
+import MenuList from '@mui/material/MenuList';
+import Stack from '@mui/material/Stack';
+import * as React from 'react';
 import NavItem from './NavItem';
+import styles from './index.module.css';
 
 const sections = [
     {
