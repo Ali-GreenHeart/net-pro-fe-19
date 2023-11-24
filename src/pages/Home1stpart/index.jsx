@@ -52,8 +52,8 @@ export default function Home1stPart() {
                             sx={{ mr: 2 }}
                         >
                             <LocationOnIcon />
-                            <Typography variant="body1" component="p" sx={{ fontSize: '15px' }} >
-                                Fəzail Bayramov küç., 1156, Xətai ray., Bakı, Azərbaycan, AZ1025          </Typography>
+                            <Typography variant="body1" component="p" sx={{ fontSize: '15px' }}>
+                                Fəzail Bayramov küç., 1156, Xətai ray., Bakı, Azərbaycan, AZ1025</Typography>
                         </IconButton>
                         <IconButton
                             size="large"
@@ -75,7 +75,7 @@ export default function Home1stPart() {
                                 info@netprogroup.az
                             </Typography>
                         </IconButton>
-                        <Stack gap={0.7} flexDirection="row" >
+                        <Stack gap={0.7} flexDirection="row" sx={{mx: 1}}>
                             <FacebookIcon sx={{ border: '1px solid white', borderRadius: 0.5, boxSizing: 'content-box', padding: 0.3 }} />
                             <LinkedInIcon sx={{ border: '1px solid white', borderRadius: 0.5, boxSizing: 'content-box', padding: 0.3 }} />
                             <InstagramIcon sx={{ border: '1px solid white', borderRadius: 0.5, boxSizing: 'content-box', padding: 0.3 }} />
@@ -84,17 +84,25 @@ export default function Home1stPart() {
                         <Stack flexDirection="row" alignItems="center" my={1}>
                             <FormControl sx={{ minWidth: 120, border: '1px solid white', borderRadius: '4px' }}>
                                 <Select
+
                                     sx={{
                                         ".MuiSelect-select": {
-                                            py: "10px !important",
+                                            py: "10px !important"
                                         },
-                                        color: 'white', borderColor: 'white'
+                                        "& svg": {
+                                            color: "white"
+                                        },
+                                        color: 'white',
+                                        border: 'none',
+                                        outline: 'none',
+
                                     }}
+
                                     value={age}
                                     onChange={handleChange}
                                     displayEmpty
                                     inputProps={{ 'aria-label': 'Without label' }}
-                                    IconComponent={() => <ArrowDownward color="white" style={{cursor:'pointer'}}/>}
+                                    IconComponent={() => <ArrowDownward color="white" style={{ cursor: 'pointer' }} />}
                                 >
                                     <MenuItem value="">
                                         <em>1 USD - 1.700 AZN ⏺️</em>
@@ -116,15 +124,16 @@ export default function Home1stPart() {
                                         ".MuiSelect-select": {
                                             py: "10px !important"
                                         },
-                                        "& svg":{
-                                            color:"white"
+                                        "& svg": {
+                                            color: "white"
                                         },
                                         color: 'white',
                                         border: 'none',
                                         outline: 'none',
-                                        
+
+
                                     }}
-                                    IconComponent={() => <ArrowDropDownIcon color="white" style={{cursor:'pointer'}}/>}
+                                    IconComponent={() => <ArrowDropDownIcon color="white" style={{ cursor: 'pointer' }} />}
                                     value={age}
                                     onChange={handleChange}
                                     displayEmpty

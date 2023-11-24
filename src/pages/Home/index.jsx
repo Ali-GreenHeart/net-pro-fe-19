@@ -3,6 +3,8 @@ import HomeServiceCard from "../../components/HomeServiceCard"
 import services from "../../mockData/services"
 import Home1stPart from "../Home1stpart"
 import HomeAbout from "../../components/homeAbout"
+import React from 'react'
+
 
 const Home = () => {
     return (
