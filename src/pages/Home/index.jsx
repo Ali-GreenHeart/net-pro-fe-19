@@ -2,11 +2,13 @@ import { Box, Container, Grid, Typography } from "@mui/material"
 import HomeServiceCard from "../../components/HomeServiceCard"
 import services from "../../mockData/services"
 import Home1stPart from "../Home1stpart"
+import HomeAbout from "../../components/homeAbout"
 
 const Home = () => {
     return (
         <>
             <Home1stPart />
+            <HomeAbout/>
             <Box sx={{
                 backgroundImage: 'url("https://www.netprogroup.az/front/assets/bg-6.jpg")',
                 backgroundSize: 'cover',
