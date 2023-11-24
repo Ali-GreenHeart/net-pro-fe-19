@@ -59,8 +59,8 @@ const sections = [
 export default function Navigation() {
 
     return (
-        <Box className={styles.navContainer} sx={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', p:4}}>
-                 <NetProIcon/>
+        <Box className={styles.navContainer} sx={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', padding: '2rem 0'}}>
+                 <NetProIcon afterBgColor={'info.main'} top={'10px'} bgColor={'secondary.main'} word1Color={'primary.main'} word2Color={'primary.light'}/>
             <MenuList className={styles.dropdown}>
                 <Stack flexDirection={'row'} flexWrap={'wrap'}>
                     {
