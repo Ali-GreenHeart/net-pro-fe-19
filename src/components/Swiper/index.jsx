@@ -12,6 +12,8 @@ import 'swiper/css/pagination';
 import { ArrowLeft, ArrowRight } from '@mui/icons-material';
 import { Box, Button, IconButton, Stack, Typography } from '@mui/material';
 import { Navigation, Pagination } from 'swiper/modules';
+import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
+
 
 export default function SwiperComponent() {
     const [realIndex, setRealIndex] = useState(1)
@@ -29,7 +31,7 @@ export default function SwiperComponent() {
                 sx={{
                     position: 'absolute',
                     zIndex: 100,
-                    bottom: 20,
+                    bottom: 35,
                     left: 40
                 }}>
                 <h1> {realIndex} /  5 </h1>
@@ -40,7 +42,7 @@ export default function SwiperComponent() {
                 sx={{
                     position: 'absolute',
                     zIndex: 100,
-                    bottom: 20,
+                    bottom: 35,
                     right: 40
                 }}>
                 <Button variant="contained" ref={prevRef}>
@@ -75,11 +77,25 @@ export default function SwiperComponent() {
                 <SwiperSlide style={{
                     backgroundImage: `url("/Home.png")`,
                     backgroundSize: `cover`,
-                    height: "70vh",
                     width: '100%'
                 }}>
-                    <Typography variant="h4">Avadanlıqların Quraşdırılması və Konfiqurasiyası</Typography>
-                </SwiperSlide>
+                    <Box sx={{ height: '80vh', width: '100%', display: 'flex', flexDirection: 'column', justifyContent: "center", alignItems: 'flex-start', gap: 3 }}>
+                        <Typography variant="h3" color="primary.main" component={'h1'} width={'60%'} fontWeight={'600'}>
+                            Avadanlıqların Quraşdırılması
+                            və Konfiqurasiyası
+                        </Typography>
+                        <Box sx={{ bgcolor: 'white', borderRadius: '12px', padding: '2px' }} >
+                            <Button variant={'contained'} sx={{ bgcolor: '#FFFFFF', color: 'primary.main', borderRadius: '10px', fontWeight: '600', border: '1px solid #435072' }}>
+                                Daha Ətraflı
+                                <KeyboardDoubleArrowRightIcon />
+                            </Button>
+                        </Box>
+                        <Box style={{ marginTop: '2rem' }}>
+                            <Stack spacing={2}>
+                                <Pagination count={3} color="primary" />
+                            </Stack>
+                        </Box>
+                    </Box >                </SwiperSlide>
                 <SwiperSlide style={{
                     backgroundImage: `url("/Home.png")`,
                     backgroundSize: `cover`,
