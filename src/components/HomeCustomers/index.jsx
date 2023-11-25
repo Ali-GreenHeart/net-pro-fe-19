@@ -7,20 +7,21 @@ const HomeCustomers = () => {
     return (
         <Box sx={{ bgcolor: 'info.main', minHeight: '30vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
             <Container>
-                <Stack flexDirection='row' spacing={2} sx={{gap:'2rem'}}>
-                    <Typography variant="h3" color="primary.main" sx={{ fontWeight: 600, padding:1}}>
-                    Partnyorlar və Müştərilər</Typography>
-                    <Box sx={{display:'flex', flexWrap:'wrap', border:'1px solid red', gap:'1rem'}}>
+                <Grid container alignItems="center" spacing={2}>
+                    <Grid item xs={12} sm={6} md={4}>
+                        <Typography variant="h3" color="primary.main" sx={{ fontWeight: 600, padding: 1 }}>
+                            Partnyorlar və Müştərilər</Typography>
+                    </Grid>
+                    <Grid container item xs={12} sm={6} md={8}>
                         {logos.map((logo, index) => {
                             return (
-                                <React.Fragment key={index}>
-                                    <img alt={logo.slice(6)} src={logo}/>
-                                </React.Fragment>
+                                <Grid item xs={6} md={3} key={index}>
+                                    <img alt={logo.slice(6)} src={logo} />
+                                </Grid>
                             )
                         })}
-
-                    </Box>
-                </Stack>
+                    </Grid>
+                </Grid>
 
             </Container>
         </Box>
