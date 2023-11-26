@@ -13,111 +13,118 @@ import styles from './style.module.css';
 // import required modules
 import { Pagination, Navigation } from 'swiper/modules';
 import { ArrowLeft, ArrowRight } from '@mui/icons-material';
-
+import { products } from './db';
+import { ProductSections } from './productSection';
+export const productImages = products.map((product)=>product.img)
 export default function ProducsSwiper() {
     const prevRef = useRef(null)
     const nextRef = useRef(null)
     const [realIndex, setRealIndex] = useState(1)
     const [init, setInit] = useState(false)
+    const breakpoints = {
+        600: {
+            slidesPerView: 1,
+        },
+        1024: {
+            slidesPerView: 3,
+        },
+    };
+
     return (
-        <>
-            <Stack
-                gap={2}
-                flexDirection="row"
-                sx={{
-                    position: 'absolute',
-                    zIndex: 100,
-                    bottom: 20,
-                    right: 40
-                }}>
-                <Button variant="contained" ref={prevRef}>
-                    <ArrowLeft />
-                </Button>
-                <Button variant="contained" ref={nextRef}>
-                    <ArrowRight />
-                </Button>
-            </Stack>
-            <Swiper
-                onRealIndexChange={({ realIndex }) => {
-                    setRealIndex(realIndex + 1)
+        <Box sx={{ bgcolor: 'primary.main', minHeight: '90vh', padding: '1rem 0' }}>
+            <Container maxWidth="lg">
+                <Typography variant="h3" component='h1' color="initial" sx={{ textAlign: 'center', fontWeight: 600, color: 'info.main' }}>Məhsullar</Typography>
+                <Swiper style={{position: 'relative', margin:'1.5rem 0' }}
+                    onRealIndexChange={({ realIndex }) => {
+                        setRealIndex(realIndex + 1)
 
-                }}
-                loop
-                onInit={() => setInit(true)}
-                navigation={{
-                    prevEl: prevRef.current,
-                    nextEl: nextRef.current,
-                }}
-                slidesPerView={3}
-                spaceBetween={30}
-                centeredSlides={true}
-                // pagination={{
-                //     clickable: true,
-                // }}
-                modules={[Pagination, Navigation]}
-                className="mySwiper"
-            >
-                <SwiperSlide style={{
-                    backgroundImage: `url("https://i.natgeofe.com/n/548467d8-c5f1-4551-9f58-6817a8d2c45e/NationalGeographic_2572187_square.jpg")`,
-                    backgroundSize: `cover`,
-                    backgroundPosition: `center`,
-                    height: "70vh",
-                    width: '100%'
-                }}>slide1</SwiperSlide>
-                <SwiperSlide style={{
-                    backgroundImage: `url("https://i.guim.co.uk/img/media/26392d05302e02f7bf4eb143bb84c8097d09144b/446_167_3683_2210/master/3683.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=11e949fc5d06576bc8b80ec192896753")`,
-                    backgroundSize: `cover`,
-                    backgroundPosition: `center`,
-                    height: "70vh",
-                    width: '100%'
-                }}>Slide 2</SwiperSlide>
-                <SwiperSlide style={{
-                    backgroundImage: `url("https://cdn.britannica.com/39/7139-050-A88818BB/Himalayan-chocolate-point.jpg")`,
-                    backgroundSize: `cover`,
-                    backgroundPosition: `center`,
-                    height: "70vh",
-                    width: '100%'
-                }}>Slide 3</SwiperSlide>
-                <SwiperSlide style={{
-                    backgroundImage: `url("/Home.png")`,
-                    backgroundSize: `cover`,
-                    backgroundPosition: `center`,
-                    height: "70vh",
-                    width: '100%'
-                }}>Slide 4</SwiperSlide>
-                <SwiperSlide style={{
-                    backgroundImage: `url("/Home.png")`,
-                    backgroundSize: `cover`,
-                    backgroundPosition: `center`,
-                    height: "70vh",
-                    width: '100%'
-                }}>Slide 5</SwiperSlide>
-                <SwiperSlide style={{
-                    backgroundImage: `url("/Home.png")`,
-                    backgroundSize: `cover`,
-                    backgroundPosition: `center`,
-                    height: "70vh",
-                    width: '100%'
-                }}>Slide 6</SwiperSlide>
-
-            </Swiper>
-            {init && (
-                <style>
-                    {`
+                    }}
+                    loop
+                    onInit={() => setInit(true)}
+                    navigation={{
+                        prevEl: prevRef.current,
+                        nextEl: nextRef.current,
+                    }}
+                    breakpoints={breakpoints}
+                    spaceBetween={30}
+                    centeredSlides={true}
+                    // pagination={{
+                    //     clickable: true,
+                    // }}
+                    modules={[Pagination, Navigation]}
+                    className="mySwiper"
+                >
+                    <Stack flexDirection={'row'} flexWrap={'wrap'} justifyContent={'space-between'} alignItems={'center'}>
+                        <Button variant="contained" color='info' ref={prevRef} className={styles.btn} sx={{ position: 'absolute', top: '30%', left: 1, zIndex: 200,}} >
+                            <ArrowLeft sx={{color:'primary.main'}}/>
+                        </Button>
+                        <Button variant="contained" color='info' className={styles.btn} ref={nextRef} sx={{ position: 'absolute', top: '30%', right: 1, zIndex: 200 }}>
+                            <ArrowRight sx={{color:'primary.main'}}/>
+                        </Button>
+                    </Stack>
+                    <SwiperSlide style={{
+                        backgroundImage: `url("${productImages[0]}")`,
+                        backgroundSize: `cover`,
+                        backgroundPosition: `center`,
+                        height: "60vh",
+                        width: '100%'
+                    }}>slide1</SwiperSlide>
+                    <SwiperSlide style={{
+                        backgroundImage: `url("${productImages[1]}")`,
+                        backgroundSize: `cover`,
+                        backgroundPosition: `center`,
+                        height: "60vh",
+                        width: '100%'
+                    }}>Slide 2</SwiperSlide>
+                    <SwiperSlide style={{
+                        backgroundImage: `url("${productImages[2]}")`,
+                        backgroundSize: `contain`,
+                        backgroundPosition: `center`,
+                        height: "60vh",
+                        width: '100%'
+                    }}>Slide 3</SwiperSlide>
+                    <SwiperSlide style={{
+                        backgroundImage: `url("${productImages[3]}")`,
+                        backgroundSize: `contain`,
+                        backgroundPosition: `center`,
+                        height: "60vh",
+                        width: '100%'
+                    }}></SwiperSlide>
+                    <SwiperSlide style={{
+                        backgroundImage: `url("${productImages[4]}")`,
+                        backgroundSize: `cover`,
+                        backgroundPosition: `center`,
+                        height: "60vh",
+                        width: '100%'
+                    }}>Slide 5</SwiperSlide>
+                    <SwiperSlide style={{
+                        backgroundImage: `url("${productImages[5]}")`,
+                        backgroundSize: `cover`,
+                        backgroundPosition: `center`,
+                        height: "60vh",
+                        width: '100%'
+                    }}>Slide 6</SwiperSlide>
+                </Swiper>
+               <ProductSections/>
+                {init && (
+                    <style>
+                        {`
                                  .mySwiper .swiper-slide:not(.swiper-slide-active) {
-                                      
-                                            border: 2px solid blue;
-                                            transform:scale(0.7);
-                                            filter: grayscale(100%);                                        }
-                
-                                        .mySwiper .swiper-slide-active {
-                                            border: 2px solid red;
-                                            transform:scale(1)
+                                     
+                                     transform:scale(0.7);
+                                     filter: opacity(60%);
+                                     // transition:all 800ms;                                     }
+                                     
+                                     .mySwiper .swiper-slide-active {
+                                         transform:scale(1);
+                                         // transition:all 800ms;                                        }
+                                         
                                         }
-                
-                    `}
-                </style>
-            )}
-        </>
+                                        
+                                        `}
+                    </style>
+                )}
+            </Container>
+        </Box>
     );
 }
