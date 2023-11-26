@@ -4,6 +4,7 @@ import services from "../../mockData/services"
 import Home1stPart from "../Home1stpart"
 import HomeAbout from "../../components/homeAbout"
 import React from 'react'
+import HomeCustomers from "../../components/HomeCustomers"
 
 
 const Home = () => {
@@ -11,6 +12,7 @@ const Home = () => {
         <>
             <Home1stPart />
             <HomeAbout/>
+            <HomeCustomers/>
             <Box sx={{
                 backgroundImage: 'url("https://www.netprogroup.az/front/assets/bg-6.jpg")',
                 backgroundSize: 'cover',
