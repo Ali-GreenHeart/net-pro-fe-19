@@ -1,18 +1,14 @@
 import React from 'react'
-import { products } from './db'
-import { productImages } from '.'
 import { Box, Container, Grid, Typography, Stack, Button } from "@mui/material"
 
-export const ProductSections = () => {
-    products.map(({ id, title, body, img }) => {
+export const ProductSections = ({id, title, body}) => {
         return (
             <React.Fragment key={id} >
-                <Stack flexWrap={'wrap'} alignItems={'center'} justifyContent={'flex-start'} spacing={3} >
+                <Stack flexWrap={'wrap'} alignItems={'center'} justifyContent={'flex-start'} spacing={3} sx={{textAlign:'center', margin:'1rem 0'}}>
                     <Typography variant="h3" component='h1' color="info.main" sx={{ fontWeight: 600, letterSpacing: 1 }}>{title}</Typography>
-                    <Typography variant="body1" color="info.main" sx={{ width: { xs: '100%', md: '70%' }, textAlign: 'center' }}>{body}</Typography>
+                    <Typography variant="body1" color="info.main" sx={{ width: '100%' }}>{body}</Typography>
                 </Stack>
             </React.Fragment >
         )
-    })
-}
+    }
 
