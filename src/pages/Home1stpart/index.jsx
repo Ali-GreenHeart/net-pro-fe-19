@@ -75,7 +75,7 @@ export default function Home1stPart() {
                                 info@netprogroup.az
                             </Typography>
                         </IconButton>
-                        <Stack gap={0.7} flexDirection="row" sx={{mx: 1}}>
+                        <Stack gap={0.7} flexDirection="row" sx={{ mx: 1 }}>
                             <FacebookIcon sx={{ border: '1px solid white', borderRadius: 0.5, boxSizing: 'content-box', padding: 0.3 }} />
                             <LinkedInIcon sx={{ border: '1px solid white', borderRadius: 0.5, boxSizing: 'content-box', padding: 0.3 }} />
                             <InstagramIcon sx={{ border: '1px solid white', borderRadius: 0.5, boxSizing: 'content-box', padding: 0.3 }} />
@@ -154,15 +154,7 @@ export default function Home1stPart() {
                     <Navigation />
                 </Container>
             </Box>
-            <Box sx={{
-                backgroundImage: 'url("../../../public/Home.png")',
-                backgroundSize: 'cover',
-                backgroundRepeat: 'no-repeat'
-            }}>
-                <Container>
-                    <HomePhoto />
-                </Container>
-            </Box>
+            <HomePhoto />
         </>
     );
 }
