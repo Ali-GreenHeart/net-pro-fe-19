@@ -14,7 +14,21 @@
   justify-content: center;
   align-items: center;
 }
+.btnGroup button {
+  position: absolute;
+  z-index: 200;
+  transform: scale(1.7);
+}
 
-.btn {
-  opacity: 0.8;
+.homePhoto {
+  object-fit: "cover";
+}
+@media only screen and (max-width: 1000px) {
+  .homePhoto {
+    object-fit: contain;
+  }
+  .btnGroup button {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
 }
