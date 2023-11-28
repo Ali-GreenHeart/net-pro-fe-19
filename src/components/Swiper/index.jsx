@@ -12,8 +12,7 @@ import 'swiper/css/pagination';
 import { ArrowLeft, ArrowRight } from '@mui/icons-material';
 import { Box, Button, Stack, Typography } from '@mui/material';
 import { Navigation, Pagination } from 'swiper/modules';
-import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
-
+import {HomeSlides} from './HomeSlides.jsx'
 
 export default function SwiperComponent() {
     const [realIndex, setRealIndex] = useState(1)
@@ -75,47 +74,7 @@ export default function SwiperComponent() {
                 modules={[Pagination, Navigation]}
                 className="mySwiper"
             >
-                <SwiperSlide style={{
-                    backgroundImage: `url("/Home.png")`,
-                    backgroundSize: `cover`,
-                    width: '100%'
-                }}>
-                    <Box sx={{ height: '80vh', width: '100%', display: 'flex', flexDirection: 'column', justifyContent: "center", alignItems: 'flex-start', gap: 3 }}>
-                        <Typography variant="h3" color="primary.main" component={'h1'} width={'60%'} fontWeight={'600'}>
-                            Avadanlıqların Quraşdırılması
-                            və Konfiqurasiyası
-                        </Typography>
-                        <Box sx={{ bgcolor: 'white', borderRadius: '12px', padding: '2px' }} >
-                            <Button variant={'contained'} sx={{ bgcolor: '#FFFFFF', color: 'primary.main', borderRadius: '10px', fontWeight: '600', border: '1px solid #435072' }}>
-                                Daha Ətraflı
-                                <KeyboardDoubleArrowRightIcon />
-                            </Button>
-                        </Box>
-                    </Box >                </SwiperSlide>
-                <SwiperSlide style={{
-                    backgroundImage: `url("/Home.png")`,
-                    backgroundSize: `cover`,
-                    height: "70vh",
-                    width: '100%'
-                }}>Slide 2</SwiperSlide>
-                <SwiperSlide style={{
-                    backgroundImage: `url("/Home.png")`,
-                    backgroundSize: `cover`,
-                    height: "70vh",
-                    width: '100%'
-                }}>Slide 3</SwiperSlide>
-                <SwiperSlide style={{
-                    backgroundImage: `url("/Home.png")`,
-                    backgroundSize: `cover`,
-                    height: "70vh",
-                    width: '100%'
-                }}>Slide 4</SwiperSlide>
-                <SwiperSlide style={{
-                    backgroundImage: `url("/Home.png")`,
-                    backgroundSize: `cover`,
-                    height: "70vh",
-                    width: '100%'
-                }}>Slide 5</SwiperSlide>
+                {HomeSlides}
             </Swiper>
         </Box>
     );
