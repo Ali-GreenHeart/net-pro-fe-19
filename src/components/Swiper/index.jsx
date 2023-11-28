@@ -10,7 +10,7 @@ import 'swiper/css/pagination';
 
 // import required modules
 import { ArrowLeft, ArrowRight } from '@mui/icons-material';
-import { Box, Button, IconButton, Stack, Typography } from '@mui/material';
+import { Box, Button, Stack, Typography } from '@mui/material';
 import { Navigation, Pagination } from 'swiper/modules';
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
 
@@ -64,7 +64,8 @@ export default function SwiperComponent() {
                     dynamicBullets: true,
                     renderBullet: function (index, className) {
                         return '<span style="background-color:#435072;width: 15px; height:15px;" class="' + className + '">' + (index + 1) + '</span>';
-                    }
+                    },
+                    clickable: true
                 }}
 
                 navigation={{
@@ -89,11 +90,6 @@ export default function SwiperComponent() {
                                 Daha Ətraflı
                                 <KeyboardDoubleArrowRightIcon />
                             </Button>
-                        </Box>
-                        <Box style={{ marginTop: '2rem' }}>
-                            <Stack spacing={2}>
-                                <Pagination count={3} color="primary" />
-                            </Stack>
                         </Box>
                     </Box >                </SwiperSlide>
                 <SwiperSlide style={{

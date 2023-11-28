@@ -1,5 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { Box, Container, Grid, Typography, Stack, Button } from "@mui/material"
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -15,7 +17,8 @@ import { Pagination, Navigation } from 'swiper/modules';
 import { ArrowLeft, ArrowRight } from '@mui/icons-material';
 import { products } from './db';
 import { ProductSections } from './productSection';
-export const productImages = products.map((product)=>product.img)
+import SwiperSliders from './SwiperSliders';
+export const productImages = products.map((product) => product.img)
 export default function ProducsSwiper() {
     const prevRef = useRef(null)
     const nextRef = useRef(null)
@@ -34,7 +37,7 @@ export default function ProducsSwiper() {
         <Box sx={{ bgcolor: 'primary.main', minHeight: '90vh', padding: '1rem 0' }}>
             <Container maxWidth="lg">
                 <Typography variant="h3" component='h1' color="initial" sx={{ textAlign: 'center', fontWeight: 600, color: 'info.main' }}>Məhsullar</Typography>
-                <Swiper style={{position: 'relative', margin:'1.5rem 0' }}
+                <Swiper style={{ position: 'relative', margin: '1.5rem 0' }}
                     onRealIndexChange={({ realIndex }) => {
                         setRealIndex(realIndex + 1)
 
@@ -55,60 +58,22 @@ export default function ProducsSwiper() {
                     className="mySwiper"
                 >
                     <Stack flexDirection={'row'} flexWrap={'wrap'} justifyContent={'space-between'} alignItems={'center'}>
-                        <Button variant="contained" color='info' ref={prevRef} className={styles.btn} sx={{ position: 'absolute', top: '30%', left: 1, zIndex: 200,}} >
-                            <ArrowLeft sx={{color:'primary.main'}}/>
+                        <Button color='info' ref={prevRef} className={styles.btn} sx={{ position: 'absolute', top: '30%', left: 1, zIndex: 200, }} >
+                            <ArrowBackIcon sx={{ color: 'white' }} />
                         </Button>
-                        <Button variant="contained" color='info' className={styles.btn} ref={nextRef} sx={{ position: 'absolute', top: '30%', right: 1, zIndex: 200 }}>
-                            <ArrowRight sx={{color:'primary.main'}}/>
+                        <Button color='info' className={styles.btn} ref={nextRef} sx={{ position: 'absolute', top: '30%', right: 1, zIndex: 200 }}>
+                            <ArrowForwardIcon sx={{ color: 'white' }} />
                         </Button>
                     </Stack>
-                    <SwiperSlide style={{
-                        backgroundImage: `url("${productImages[0]}")`,
-                        backgroundSize: `cover`,
-                        backgroundPosition: `center`,
-                        height: "60vh",
-                        width: '100%'
-                    }}>slide1</SwiperSlide>
-                    <SwiperSlide style={{
-                        backgroundImage: `url("${productImages[1]}")`,
-                        backgroundSize: `cover`,
-                        backgroundPosition: `center`,
-                        height: "60vh",
-                        width: '100%'
-                    }}>Slide 2</SwiperSlide>
-                    <SwiperSlide style={{
-                        backgroundImage: `url("${productImages[2]}")`,
-                        backgroundSize: `contain`,
-                        backgroundPosition: `center`,
-                        height: "60vh",
-                        width: '100%'
-                    }}>Slide 3</SwiperSlide>
-                    <SwiperSlide style={{
-                        backgroundImage: `url("${productImages[3]}")`,
-                        backgroundSize: `contain`,
-                        backgroundPosition: `center`,
-                        height: "60vh",
-                        width: '100%'
-                    }}></SwiperSlide>
-                    <SwiperSlide style={{
-                        backgroundImage: `url("${productImages[4]}")`,
-                        backgroundSize: `cover`,
-                        backgroundPosition: `center`,
-                        height: "60vh",
-                        width: '100%'
-                    }}>Slide 5</SwiperSlide>
-                    <SwiperSlide style={{
-                        backgroundImage: `url("${productImages[5]}")`,
-                        backgroundSize: `cover`,
-                        backgroundPosition: `center`,
-                        height: "60vh",
-                        width: '100%'
-                    }}>Slide 6</SwiperSlide>
+                    {SwiperSliders}
                 </Swiper>
-               <ProductSections/>
+                <ProductSections />
                 {init && (
                     <style>
                         {`
+                        .swiper-wrapper{
+                            align-items: center;
+                        }
                                  .mySwiper .swiper-slide:not(.swiper-slide-active) {
                                      
                                      transform:scale(0.7);
@@ -119,6 +84,10 @@ export default function ProducsSwiper() {
                                          transform:scale(1);
                                          // transition:all 800ms;                                        }
                                          
+                                        .mySwiper .swiper-slide:not(.swiper-slide-active) h5,
+                                        .mySwiper .swiper-slide:not(.swiper-slide-active) p                                        
+                                        {
+                                            display:none;
                                         }
                                         
                                         `}

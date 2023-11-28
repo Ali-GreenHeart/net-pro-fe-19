@@ -5,8 +5,8 @@ function App() {
 
   return (
     <>
-      {/* <WebRouting /> */}
-      <ProducsSwiper />
+      <WebRouting />
+      {/* <ProducsSwiper /> */}
 
     </>
   )
