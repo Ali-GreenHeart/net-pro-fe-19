@@ -1,8 +1,9 @@
 import React from 'react'
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { SwiperSlide } from 'swiper/react';
 import { products } from './db';
 import { Box } from '@mui/material';
-
+import { ProductSections } from './productSection.jsx'
+import styles from './style.module.css'
 const SwiperSliders = products.map(({ id, img, body, title }) => {
     return (
         <SwiperSlide
@@ -13,11 +14,13 @@ const SwiperSliders = products.map(({ id, img, body, title }) => {
                     style={{
                         height: "300px",
                         width: '100%',
-                        objectFit: 'cover'
                     }}
+                    className={styles.homePhoto}
                     src={img} alt="" />
-                <h5>{title}</h5>
-                <p>{body}</p>
+
+            </Box>
+            <Box sx={{}}>
+                <ProductSections id={id} title={title} body={body} />
             </Box>
         </SwiperSlide>
     )
