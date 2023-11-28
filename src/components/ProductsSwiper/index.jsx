@@ -8,7 +8,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
 import 'swiper/css';
-// import 'swiper/css/pagination';
+import 'swiper/css/pagination';
 
 import styles from './style.module.css';
 
@@ -18,6 +18,7 @@ import { ArrowLeft, ArrowRight } from '@mui/icons-material';
 import { products } from './db';
 import { ProductSections } from './productSection';
 import SwiperSliders from './SwiperSliders';
+
 export const productImages = products.map((product) => product.img)
 export default function ProducsSwiper() {
     const prevRef = useRef(null)
