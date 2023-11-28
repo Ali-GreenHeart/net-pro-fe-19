@@ -1,7 +1,6 @@
 import React from 'react'
 import { Box, Container, Grid, Typography, Stack, Button } from "@mui/material"
-
-const logos = ['public/logo1.svg', 'public/logo2.svg', 'public/logo3.svg', 'public/logo4.svg', 'public/logo5.svg', 'public/logo6.svg', 'public/logo7.svg', 'public/logo8.svg']
+const logos = ['logos/logo1.svg', 'logos/logo2.svg', 'logos/logo3.svg', 'logos/logo4.svg', 'logos/logo5.svg', 'logos/logo6.svg', 'logos/logo7.svg', 'logos/logo8.svg']
 
 const HomeCustomers = () => {
     return (
