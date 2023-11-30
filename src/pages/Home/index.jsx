@@ -11,9 +11,9 @@ const Home = () => {
     return (
         <>
             <Home1stPart />
-            <HomeAbout/>
-            <HomeCustomers/>
-          <ProducsSwiper/>
+            <HomeAbout />
+            <HomeCustomers />
+            <ProducsSwiper />
             <Box sx={{
                 backgroundImage: 'url("https://www.netprogroup.az/front/assets/bg-6.jpg")',
                 backgroundSize: 'cover',
