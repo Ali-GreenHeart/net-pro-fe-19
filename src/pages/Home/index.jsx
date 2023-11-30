@@ -6,14 +6,15 @@ import HomeAbout from "../../components/homeAbout"
 import React from 'react'
 import HomeCustomers from "../../components/HomeCustomers"
 import ProducsSwiper from '../../components/ProductsSwiper'
+import Footer from "../../components/Footer"
 
 const Home = () => {
     return (
         <>
             <Home1stPart />
-            <HomeAbout/>
-            <HomeCustomers/>
-          <ProducsSwiper/>
+            <HomeAbout />
+            <HomeCustomers />
+            <ProducsSwiper />
             <Box sx={{
                 backgroundImage: 'url("https://www.netprogroup.az/front/assets/bg-6.jpg")',
                 backgroundSize: 'cover',
@@ -61,7 +62,7 @@ const Home = () => {
                     </Grid>
                 </Container>
             </Box>
-
+            <Footer />
         </>
     )
 }
