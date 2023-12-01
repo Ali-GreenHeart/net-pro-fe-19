@@ -6,6 +6,7 @@ import HomeAbout from "../../components/homeAbout"
 import React from 'react'
 import HomeCustomers from "../../components/HomeCustomers"
 import ProducsSwiper from '../../components/ProductsSwiper'
+import { Brands } from "../../components/Brand"
 
 const Home = () => {
     return (
@@ -60,6 +61,8 @@ const Home = () => {
                         }
                     </Grid>
                 </Container>
+                <br />
+                <Brands />
             </Box>
 
         </>
