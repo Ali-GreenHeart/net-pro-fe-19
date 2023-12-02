@@ -4,7 +4,7 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 // Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper } from 'swiper/react';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -46,7 +46,6 @@ export default function ProducsSwiper() {
                 <Swiper style={{ position: 'relative', margin: '1.5rem 0' }}
                     onRealIndexChange={({ realIndex }) => {
                         setRealIndex(realIndex + 1)
-
                     }}
                     loop
                     onInit={() => setInit(true)}
