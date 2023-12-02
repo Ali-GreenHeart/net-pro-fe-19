@@ -1,0 +1,21 @@
+.navContainer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 2rem 0;
+  flex-direction: row;
+}
+
+@media screen and (max-width: 1020px) {
+  .dropdown{
+    display: none !important;
+  }
+  .dropBtn{
+    display: block !important;
+  }
+}
+@media screen and (max-width:450px){
+  .menu{
+    width: 200px !important;
+  }
+}
