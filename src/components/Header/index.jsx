@@ -42,14 +42,14 @@ export function Header() {
                         }
                     }}
                 >
-                    <Toolbar sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap', padding: '1rem 0' }}>
+                    <Toolbar sx={{ flexDirection: { xs: 'column', md: 'row' }, display: 'flex', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap', padding: '1rem 0', gap: 1 }}>
                         <Box>
-                            <Typography variant="body1" component="p" sx={{ display: 'flex', justifyContent: 'flex-start', marginRight:1 }}>
+                            <Typography variant="body1" component="p" sx={{ display: 'flex', justifyContent: 'flex-start', marginRight: 1 }}>
                                 <LocationOnIcon />
                                 Fəzail Bayramov küç., 1156, Xətai ray., Bakı, Azərbaycan, AZ1025</Typography>
                         </Box>
                         <Box>
-                            <Typography variant="body1" component="p" sx={{ display: 'flex', justifyContent: 'flex-start', marginRight:1 }}>
+                            <Typography variant="body1" component="p" sx={{ display: 'flex', justifyContent: 'flex-start', marginRight: 1 }}>
                                 < WhatsAppIcon />
                                 +99450 5754080 +99450 5754070
                             </Typography>

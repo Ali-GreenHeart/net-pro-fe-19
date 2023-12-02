@@ -14,7 +14,7 @@ import Logo from './Logo';
 export const Brands = () => {
     const [init, setInit] = useState(false)
     return (
-        <Box bgcolor={'primary.main'} sx={{ backgroundPosition: 'cover', position: 'relative', padding: '1.5rem 0' }} >
+        <Box className="brands-swiper" bgcolor={'primary.main'} sx={{ backgroundPosition: 'cover', position: 'relative', padding: '1.5rem 0' }} >
             <img src='../../../public/brandsHome/bgBrands.png' alt="img" style={{
                 opacity: '0.3',
                 position: 'absolute',
@@ -70,34 +70,34 @@ export const Brands = () => {
                         {init && (
                             <style>
                                 {`
-                           .swiper-slide.swiper-slide-active{
+                         .brands-swiper .swiper-slide.swiper-slide-active{
                             min-height:15vh !important;
                         }
                          
-                        .swiper-pagination *{
+                      .brands-swiper .swiper-pagination *{
                             width:8px !important;
                             height:8px !important;
                             opacity:1 !important;
                         }
-                        .swiper-pagination .swiper-pagination-bullet-active-next{
+                      .brands-swiper .swiper-pagination .swiper-pagination-bullet-active-next{
                             background-color: transparent !important;
                             border:2px solid white;
                             width:8px !important;
                         }         
-                        .swiper-pagination .swiper-pagination-bullet-active-next-next,
-                        .swiper-pagination .swiper-pagination-bullet-active-prev,
-                        .swiper-pagination .swiper-pagination-bullet-active-prev-prev
+                      .brands-swiper .swiper-pagination .swiper-pagination-bullet-active-next-next,
+                      .brands-swiper .swiper-pagination .swiper-pagination-bullet-active-prev,
+                      .brands-swiper .swiper-pagination .swiper-pagination-bullet-active-prev-prev
                         {
                             background-color: transparent !important;
                             border:2px solid white;
                         }      
-                        .swiper-pagination-bullet-active {
+                      .brands-swiper .swiper-pagination-bullet-active {
                             background-color:white;
                         }
-                        .swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-next,
-                        .swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-next-next,
-                        .swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-prev,
-                        .swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-prev-prev
+                      .brands-swiper .swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-next,
+                      .brands-swiper .swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-next-next,
+                      .brands-swiper .swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-prev,
+                      .brands-swiper .swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-prev-prev
                         {
                             transform:scale(1.0);
                         }
