@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Box, Container, Grid, Typography, Stack, Button } from "@mui/material"
+import { Box, Container, Grid, Typography, Stack } from "@mui/material"
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -21,7 +21,7 @@ export const Brands = () => {
                 left: 0,
                 top: 0,
                 width: '100%',
-                height: 'auto'
+                height: '100%'
             }} />
             <Container sx={{ textAlign: 'center' }}>
                 <Grid container>
