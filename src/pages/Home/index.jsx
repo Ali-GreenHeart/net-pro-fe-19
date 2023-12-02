@@ -7,6 +7,7 @@ import React from 'react'
 import HomeCustomers from "../../components/HomeCustomers"
 import ProducsSwiper from '../../components/ProductsSwiper'
 import { Brands } from "../../components/Brand"
+import Footer from "../../components/Footer"
 
 const Home = () => {
     return (
@@ -64,7 +65,7 @@ const Home = () => {
                 <br />
                 <Brands />
             </Box>
-
+            <Footer />
         </>
     )
 }

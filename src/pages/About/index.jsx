@@ -1,9 +1,12 @@
 import React from 'react'
+import PageContainer from '../../components/PageContainer'
 
 const About = () => {
 
     return (
-        <div>About</div>
+        <PageContainer bannerTitle='Haqqımızda'>
+            <div>About</div>
+        </PageContainer>
     )
 }
 export default About
