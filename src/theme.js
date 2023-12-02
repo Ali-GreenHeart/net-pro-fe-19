@@ -12,6 +12,17 @@ const theme = createTheme({
         },
         info: {
             main: '#F4F4F4'
+        },
+    },
+    typography: {
+        h4: {
+            fontWeight: 600
+        },
+        h5: {
+            fontWeight: 600
+        },
+        body1: {
+            fontSize: 20
         }
     }
 })
