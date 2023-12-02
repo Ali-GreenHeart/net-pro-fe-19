@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 // Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper } from 'swiper/react';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -10,9 +10,9 @@ import 'swiper/css/pagination';
 
 // import required modules
 import { ArrowLeft, ArrowRight } from '@mui/icons-material';
-import { Box, Button, Stack, Typography } from '@mui/material';
+import { Box, Button, Stack } from '@mui/material';
 import { Navigation, Pagination } from 'swiper/modules';
-import {HomeSlides} from './HomeSlides.jsx'
+import { HomeSlides } from './HomeSlides.jsx'
 
 export default function SwiperComponent() {
     const [realIndex, setRealIndex] = useState(1)
@@ -22,7 +22,7 @@ export default function SwiperComponent() {
 
     return (
         <Box sx={{
-            position: 'relative'
+            position: 'relative',
         }}>
             <Stack
                 gap={2}
@@ -30,8 +30,9 @@ export default function SwiperComponent() {
                 sx={{
                     position: 'absolute',
                     zIndex: 100,
-                    bottom: 35,
-                    left: 40
+                    bottom: 60,
+                    left: 40,
+                    color: 'primary.main',
                 }}>
                 <h1> {realIndex} /  5 </h1>
             </Stack>
@@ -54,7 +55,6 @@ export default function SwiperComponent() {
             <Swiper
                 onRealIndexChange={({ realIndex }) => {
                     setRealIndex(realIndex + 1)
-
                 }}
                 loop
                 onInit={() => setInit(true)}
