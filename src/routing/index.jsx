@@ -4,6 +4,7 @@ import About from "../pages/About"
 import NetProIcon from "../components/netProIcon"
 import HomeCustomers from "../components/HomeCustomers"
 import React from 'react'
+import Products from "../pages/Products"
 
 const WebRouting = () => {
     return (
@@ -11,6 +12,7 @@ const WebRouting = () => {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
+                <Route path="/products" element={<Products/>}/>
                 <Route path="/icon" element={<NetProIcon />} />
                 <Route path="/homecustomers" element={<HomeCustomers/>}/>
             </Routes>
