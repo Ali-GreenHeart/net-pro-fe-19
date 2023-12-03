@@ -8,7 +8,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 
 // import required modules
-import { Pagination } from 'swiper/modules';
+import { Pagination, } from 'swiper/modules';
 import Logo from './Logo';
 
 export const Brands = () => {
@@ -23,7 +23,7 @@ export const Brands = () => {
                 width: '100%',
                 height: '100%'
             }} />
-            <Container sx={{ textAlign: 'center' }}>
+            <Container>
                 <Grid container>
                     <Grid item xs={12} md={3} sx={{ padding: '0.5rem' }}>
                         <Typography variant='h3' component='h1' color='info.main' sx={{ fontWeight: 600 }}>
