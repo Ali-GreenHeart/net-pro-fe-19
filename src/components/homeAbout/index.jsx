@@ -23,7 +23,7 @@ const HomeAbout = () => {
                         udantium nesciunt tempore perferendis inventore repudiandae sapiente vero pariatur eaq
                         ue assumenda, nulla aliquam autem debitis vitae voluptatum! Delectus, quisquam est!
                     </Typography>
-                    <ButtonNetPro color='primary.main' title='Ətraflı' iconColor={'primary.main'}></ButtonNetPro>
+                    <ButtonNetPro baseColor='info' color='primary.main' title='Ətraflı' iconColor={'primary.main'}></ButtonNetPro>
 
 
                 </Stack>
