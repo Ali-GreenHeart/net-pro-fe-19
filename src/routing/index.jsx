@@ -5,6 +5,7 @@ import Contact from "../pages/Contact"
 import NetProIcon from "../components/netProIcon"
 import HomeCustomers from "../components/HomeCustomers"
 import React from 'react'
+import ProductSingle from "../pages/ProductSingle"
 
 const WebRouting = () => {
     return (
@@ -15,6 +16,7 @@ const WebRouting = () => {
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/icon" element={<NetProIcon />} />
                 <Route path="/homecustomers" element={<HomeCustomers />} />
+                <Route path="/products/:slug" element={<ProductSingle />} />
             </Routes>
         </>
     )
