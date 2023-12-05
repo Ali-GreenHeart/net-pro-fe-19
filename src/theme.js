@@ -22,7 +22,7 @@ const theme = createTheme({
             fontWeight: 600
         },
         body1: {
-            fontSize: 20
+            fontSize: 20,
             main: '#F4F4F4',
             light:'#FFFFFF'
         }
