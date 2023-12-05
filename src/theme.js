@@ -23,6 +23,8 @@ const theme = createTheme({
         },
         body1: {
             fontSize: 20
+            main: '#F4F4F4',
+            light:'#FFFFFF'
         }
     }
 })
