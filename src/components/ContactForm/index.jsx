@@ -1,14 +1,14 @@
-import { Box, Button, Container, Stack, TextField } from "@mui/material";
+import { Box, Button, Container, Stack, TextField, Typography } from "@mui/material";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import styles from './style.module.css'
 import ButtonNetPro from "../Button";
+import React, { useState } from "react";
 const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
 
 let bgColor = '#F3F3F3'
-let textColor
-
+let textColor = '#7A8BA3'
 const ContactForm = () => {
+
     const formik = useFormik({
         initialValues: {
             fullName: '',
@@ -36,7 +36,7 @@ const ContactForm = () => {
         }
     })
     return (
-        <Container sx={{textAlign:'left', py:1}}>
+        <Container sx={{ textAlign: 'left', py: 1 }}>
             <form onSubmit={formik.handleSubmit}>
                 <Stack
                     gap={3}
@@ -52,20 +52,20 @@ const ContactForm = () => {
                     }}
                 >
                     <Stack justifyContent="space-between" spacing={2}>
-                        <TextField
-                            placeholder="Adınız və Soyadınız"
-                            fullWidth
-                            name="fullName"
-                            value={formik.values.fullName}
-                            onChange={formik.handleChange}
-                            className={styles.fullName}
-                            InputProps={{ style: { color: textColor } }}
-                            sx={{ backgroundColor: bgColor }}
-                            onBlur={formik.handleBlur}
+                        
+                            <TextField
+                                placeholder="Adınız və Soyadınız"
+                                fullWidth
+                                name="fullName"
+                                value={formik.values.fullName}
+                                onChange={formik.handleChange}
+                                InputProps={{ style: { color: textColor } }}
+                                sx={{ backgroundColor: bgColor }}
+                                onBlur={formik.handleBlur}
 
-                        />
+                            />
                         {formik.errors.fullName && formik.touched.fullName && (
-                            <p style={{ color: 'red', fontSize: 12, position:"relative" }}>{formik.errors.fullName}</p>
+                            <p style={{ color: 'red', fontSize: 12, position: "relative" }}>{formik.errors.fullName}</p>
                         )}
                         <TextField
                             fullWidth
@@ -112,10 +112,11 @@ const ContactForm = () => {
                         {formik.errors.message && formik.touched.message && (
                             <p style={{ color: 'red', fontSize: 12 }}>{formik.errors.message}</p>
                         )}
+                        
                     </Box>
                 </Stack>
-                <Box sx={{mt:3, textAlign:'center'}}>
-                    <ButtonNetPro color='primary' iconColor='white' title='Göndər' key='btn' baseColor='primary' />
+                <Box sx={{ mt: 3, textAlign: 'center' }}>
+                    <ButtonNetPro color='primary' iconColor='white' title='Göndər' key='btn' baseColor='primary'/>
                 </Box>
             </form>
 
