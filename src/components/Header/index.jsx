@@ -25,14 +25,18 @@ import { ArrowDownward } from '@mui/icons-material';
 export function Header() {
 
 
-    const [age, setAge] = React.useState('');
+    const [money, setMoney] = React.useState('');
+    const [country, setCountry] = React.useState('');
 
     const handleChange = (e) => {
-        setAge(e.target.value);
+        setMoney(e.target.value);
+    };
+    const handleChange2 = (e) => {
+        setCountry(e.target.value);
     };
     return (
         <>
-            <Box sx={{ flexGrow: 1, textAlign: 'center' }} >
+            <Box sx={{ flexGrow: 1, textAlign: 'center', position: 'sticky', top: 0, zIndex: 1000 }} >
                 <AppBar position="static"
                     sx={{
                         ".MuiToolbar-root": {
@@ -87,18 +91,16 @@ export function Header() {
 
                                 }}
 
-                                value={age}
+                                value={money}
                                 onChange={handleChange}
                                 displayEmpty
                                 inputProps={{ 'aria-label': 'Without label' }}
                                 IconComponent={() => <ArrowDownward color="white" style={{ cursor: 'pointer', position: 'relative', right: 5 }} />}
                             >
-                                <MenuItem value="">
-                                    <em>1 USD - 1.700 AZN ⏺️</em>
-                                </MenuItem>
-                                <MenuItem value={10}>10 USD - 17.00 AZN</MenuItem>
-                                <MenuItem value={20}>50 USD - </MenuItem>
-                                <MenuItem value={30}>100 USD -</MenuItem>
+                                <MenuItem value=""> 1 USD - 1.700 AZN ⏺️</MenuItem>
+                                <MenuItem value={10}>lorem</MenuItem>
+                                <MenuItem value={20}>lorem</MenuItem>
+                                <MenuItem value={30}>lorem</MenuItem>
                             </Select>
                         </FormControl>
                         <FormControl sx={{
@@ -123,8 +125,8 @@ export function Header() {
 
                                 }}
                                 IconComponent={() => <ArrowDropDownIcon color="white" style={{ cursor: 'pointer' }} />}
-                                value={age}
-                                onChange={handleChange}
+                                value={country}
+                                onChange={handleChange2}
                                 displayEmpty
                                 inputProps={{ 'aria-label': 'Without label' }}
                             >
@@ -136,11 +138,11 @@ export function Header() {
                         </FormControl>
                     </Toolbar>
                 </AppBar>
-            </Box>
-            <Box sx={{ bgcolor: '#F4F4F4' }}>
-                <Container >
-                    <Navigation />
-                </Container>
+                <Box sx={{ bgcolor: '#F4F4F4' }}>
+                    <Container >
+                        <Navigation />
+                    </Container>
+                </Box>
             </Box>
         </>
     );
