@@ -1,7 +1,6 @@
 import React from 'react'
-import { Box, Container, Grid, Typography, Stack, Button } from "@mui/material"
-import NetProIcon from '../netProIcon'
-import ButtonNetPro from '../Button';
+import { Box, Container, Typography, Stack } from "@mui/material"
+=import ButtonNetPro from '../Button';
 const HomeAbout = () => {
     return (
         <Box sx={{ backgroundImage:"url('/AboutHomeBg.png')"}}>
