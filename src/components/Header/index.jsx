@@ -35,7 +35,7 @@ export function Header() {
         setCountry(e.target.value);
     };
     return (
-        <>
+    
             <Box sx={{ flexGrow: 1, textAlign: 'center', position: 'sticky', top: 0, zIndex: 1000 }} >
                 <AppBar position="static"
                     sx={{
@@ -144,6 +144,5 @@ export function Header() {
                     </Container>
                 </Box>
             </Box>
-        </>
     );
 }
