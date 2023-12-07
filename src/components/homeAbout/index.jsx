@@ -1,15 +1,14 @@
 import React from 'react'
-import { Box, Container, Grid, Typography, Stack, Button } from "@mui/material"
-import NetProIcon from '../netProIcon'
+import { Box, Container, Typography, Stack } from "@mui/material"
 import ButtonNetPro from '../Button';
 const HomeAbout = () => {
     return (
-        <Box sx={{ bgcolor: 'primary.main' }}>
+        <Box sx={{ backgroundImage:"url('/AboutHomeBg.png')"}}>
             <Container sx={{ p:{md:3, xs:4}  }}>
-                <Stack flexDirection={'column'} flexWrap={'wrap'} justifyContent={'center'} alignItems={'center'} sx={{textAlign:'center', minHeight: '80vh', gap:'3rem'}}>
-                    <NetProIcon afterBgColor={'primary.main'} top={'10px'} bgColor={'info.main'} word1Color={'info.main'} word2Color={'info.main'}/>
+                <Stack flexDirection={'column'} flexWrap={'wrap'} justifyContent={'center'} alignItems={'center'} sx={{textAlign:'center', minHeight: '80vh', gap:'2.5rem'}}>
+                    <img src="/netProIcons/NetProIcon4.svg" alt="Net Pro Icon Logo" style={{fontSize:"4rem"}}/>
                     <Typography variant="h4" color="info.main" sx={{fontWeight: 600}}>“NetPro Group” şirkəti haqqında</Typography>
-                    <Typography variant="body1" color="info.main" sx={{ lineHeight: '1.6rem' }}>Lorem ipsum dolor sit amet,
+                    <Typography variant="body1" color="info.main" sx={{ lineHeight: '1.8rem' }}>Lorem ipsum dolor sit amet,
                         consectetur adipiscing elit. Eget ullamcorper ipsum mattis sed. Auctor proin
                         in felis, nulla porta. Elementum, pharetra, egestas non vulputate eget odio el
                         ementum. Mauris felis nisi, consequat non diam egestas ac in diam. Arcu et risu
@@ -23,7 +22,7 @@ const HomeAbout = () => {
                         udantium nesciunt tempore perferendis inventore repudiandae sapiente vero pariatur eaq
                         ue assumenda, nulla aliquam autem debitis vitae voluptatum! Delectus, quisquam est!
                     </Typography>
-                    <ButtonNetPro color='primary.main' title='Ətraflı' iconColor={'primary.main'}></ButtonNetPro>
+                    <ButtonNetPro baseColor='info' color='primary.main' title='Ətraflı' iconColor={'primary.main'}></ButtonNetPro>
 
 
                 </Stack>

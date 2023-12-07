@@ -1,9 +1,11 @@
 import ContactForm from "../../components/ContactForm"
-
+import PageContainer from "../../components/PageContainer"
 const Contact = () => {
     return (
         <div>
-            <ContactForm />
+            <PageContainer bannerTitle="Əlaqə">
+            <ContactForm  />
+            </PageContainer>
         </div>
     )
 }

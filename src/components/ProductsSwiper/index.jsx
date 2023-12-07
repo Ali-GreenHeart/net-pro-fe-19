@@ -4,7 +4,7 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 // Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper } from 'swiper/react';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -46,7 +46,6 @@ export default function ProducsSwiper() {
                 <Swiper style={{ position: 'relative', margin: '1.5rem 0' }}
                     onRealIndexChange={({ realIndex }) => {
                         setRealIndex(realIndex + 1)
-
                     }}
                     loop
                     onInit={() => setInit(true)}
@@ -61,7 +60,7 @@ export default function ProducsSwiper() {
                     //     clickable: true,
                     // }}
                     modules={[Pagination, Navigation]}
-                    className="mySwiper"
+                    className="mySwiper ProductsSwiper"
                 >
                     <Stack flexDirection={'row'} flexWrap={'wrap'} justifyContent={'space-between'} alignItems={'center'} className={styles.btnGroup}>
                         <Button color='info' ref={prevRef} sx={{ top: '35%', left: { xs: '3%', md: '12%' } }} >
@@ -80,18 +79,18 @@ export default function ProducsSwiper() {
                         .swiper-wrapper{
                             align-items: center;
                         }
-                                 .mySwiper .swiper-slide:not(.swiper-slide-active) {
+                                 .mySwiper.ProductsSwiper .swiper-slide:not(.swiper-slide-active) {
                                      
                                      transform:scale(0.7);
                                      filter: opacity(60%);
                                      transition:all 800ms;                                     }
                                      
-                                     .mySwiper .swiper-slide-active {
+                                     .mySwiper.ProductsSwiper .swiper-slide-active {
                                          transform:scale(1);
                                          transition:all 800ms;                                        }
                                          
-                                        .mySwiper .swiper-slide:not(.swiper-slide-active) h1,
-                                        .mySwiper .swiper-slide:not(.swiper-slide-active) p                                        
+                                        .mySwiper.ProductsSwiper .swiper-slide:not(.swiper-slide-active) h1,
+                                        .mySwiper.ProductsSwiper .swiper-slide:not(.swiper-slide-active) p                                        
                                         {
                                             opacity:0;
                                         }

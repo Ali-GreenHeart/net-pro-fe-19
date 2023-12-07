@@ -1,10 +1,11 @@
 import PageBanner from "../Banner"
 import Footer from "../Footer"
+import { Header } from "../Header"
 
 const PageContainer = ({ children, bannerTitle = "" }) => {
     return (
         <>
-            <header>im header</header>
+            <Header/>
             {bannerTitle && <PageBanner title={bannerTitle} />}
             {children}
             <Footer />
