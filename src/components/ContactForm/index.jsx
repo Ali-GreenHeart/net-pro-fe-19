@@ -47,7 +47,7 @@ const ContactForm = () => {
                             flex: 1
                         },
                         "& input, & textarea": {
-                            minWidth: 200
+                            minWidth: 280
                         }
                     }}
                 >
