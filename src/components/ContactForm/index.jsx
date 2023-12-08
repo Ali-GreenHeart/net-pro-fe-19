@@ -7,7 +7,7 @@ const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2
 
 let bgColor = '#F3F3F3'
 let textColor = '#7A8BA3'
-const ContactForm = () => {
+const ContactForm = ({ side = 'left' }) => {
 
     const formik = useFormik({
         initialValues: {
@@ -36,23 +36,26 @@ const ContactForm = () => {
         }
     })
     return (
-        <Container sx={{ textAlign: 'left', py: 1 }}>
-            <form onSubmit={formik.handleSubmit}>
-                <Stack
-                    gap={3}
-                    flexDirection="row"
-                    flexWrap="wrap"
-                    sx={{
-                        "&>div": {
-                            flex: 1
-                        },
-                        "& input, & textarea": {
-                            minWidth: 280
-                        }
-                    }}
-                >
-                    <Stack justifyContent="space-between" spacing={2}>
-                        
+        <Container sx={{ textAlign: side, py: 1 }}>
+            <Stack spacing={3}>
+                <Typography variant="h4" color="initial" component={'h2'} sx={{ fontWeight: 600, color: 'primary.main' }}>Suallarınız var?</Typography>
+                <Typography variant="body1" color="primary.main" sx={{}}>Formu doldurun. Yaxın zamanda sizinlə əlaqə saxlayacayıq.</Typography>
+                <form onSubmit={formik.handleSubmit}>
+                    <Stack
+                        gap={3}
+                        flexDirection="row"
+                        flexWrap="wrap"
+                        sx={{
+                            "&>div": {
+                                flex: 1
+                            },
+                            "& input, & textarea": {
+                                minWidth: 280
+                            }
+                        }}
+                    >
+                        <Stack justifyContent="space-between" spacing={2}>
+
                             <TextField
                                 placeholder="Adınız və Soyadınız"
                                 fullWidth
@@ -64,62 +67,61 @@ const ContactForm = () => {
                                 onBlur={formik.handleBlur}
 
                             />
-                        {formik.errors.fullName && formik.touched.fullName && (
-                            <p style={{ color: 'red', fontSize: 12, position: "relative" }}>{formik.errors.fullName}</p>
-                        )}
-                        <TextField
-                            fullWidth
-                            placeholder="Email ünvanı"
-                            name="email"
-                            value={formik.values.email}
-                            onChange={formik.handleChange}
-                            InputProps={{ style: { color: textColor } }}
-                            sx={{ backgroundColor: bgColor }}
-                            onBlur={formik.handleBlur}
+                            {formik.errors.fullName && formik.touched.fullName && (
+                                <p style={{ color: 'red', fontSize: 12, position: "relative" }}>{formik.errors.fullName}</p>
+                            )}
+                            <TextField
+                                fullWidth
+                                placeholder="Email ünvanı"
+                                name="email"
+                                value={formik.values.email}
+                                onChange={formik.handleChange}
+                                InputProps={{ style: { color: textColor } }}
+                                sx={{ backgroundColor: bgColor }}
+                                onBlur={formik.handleBlur}
 
-                        />
-                        {formik.errors.email && formik.touched.email && (
-                            <p style={{ color: 'red', fontSize: 12 }}>{formik.errors.email}</p>
-                        )}
-                        <TextField
-                            fullWidth
-                            placeholder="Əlaqə nömrəsi"
-                            name="phone"
-                            value={formik.values.phone}
-                            onChange={formik.handleChange}
-                            InputProps={{ style: { color: textColor } }}
-                            sx={{ backgroundColor: bgColor }}
-                            onBlur={formik.handleBlur}
-                        />
-                        {formik.errors.phone && formik.touched.phone && (
-                            <p style={{ color: 'red', fontSize: 12 }}>{formik.errors.phone}</p>
-                        )}
+                            />
+                            {formik.errors.email && formik.touched.email && (
+                                <p style={{ color: 'red', fontSize: 12 }}>{formik.errors.email}</p>
+                            )}
+                            <TextField
+                                fullWidth
+                                placeholder="Əlaqə nömrəsi"
+                                name="phone"
+                                value={formik.values.phone}
+                                onChange={formik.handleChange}
+                                InputProps={{ style: { color: textColor } }}
+                                sx={{ backgroundColor: bgColor }}
+                                onBlur={formik.handleBlur}
+                            />
+                            {formik.errors.phone && formik.touched.phone && (
+                                <p style={{ color: 'red', fontSize: 12 }}>{formik.errors.phone}</p>
+                            )}
+                        </Stack>
+                        <Box>
+                            <TextField
+                                fullWidth
+                                minRows={7}
+                                placeholder="Mesajınız"
+                                multiline
+                                name="message"
+                                value={formik.values.message}
+                                onChange={formik.handleChange}
+                                InputProps={{ style: { color: textColor } }}
+                                sx={{ backgroundColor: bgColor }}
+                                onBlur={formik.handleBlur}
+
+                            />
+                            {formik.errors.message && formik.touched.message && (
+                                <p style={{ color: 'red', fontSize: 12 }}>{formik.errors.message}</p>
+                            )}
+                        </Box>
                     </Stack>
-                    <Box>
-                        <TextField
-                            fullWidth
-                            minRows={7}
-                            placeholder="Mesajınız"
-                            multiline
-                            name="message"
-                            value={formik.values.message}
-                            onChange={formik.handleChange}
-                            InputProps={{ style: { color: textColor } }}
-                            sx={{ backgroundColor: bgColor }}
-                            onBlur={formik.handleBlur}
-
-                        />
-                        {formik.errors.message && formik.touched.message && (
-                            <p style={{ color: 'red', fontSize: 12 }}>{formik.errors.message}</p>
-                        )}
-                        
+                    <Box sx={{ mt: 3 }}>
+                        <ButtonNetPro color='primary' iconColor='white' title='Göndər' key='btn' baseColor='primary' />
                     </Box>
-                </Stack>
-                <Box sx={{ mt: 3, textAlign: 'center' }}>
-                    <ButtonNetPro color='primary' iconColor='white' title='Göndər' key='btn' baseColor='primary'/>
-                </Box>
-            </form>
-
+                </form>
+            </Stack>
         </Container>
 
     )
