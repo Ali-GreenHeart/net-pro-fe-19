@@ -76,8 +76,6 @@ const Contact = () => {
                         </Grid>
                         <Grid item xs={12} sm={7}>
                             <Stack textAlign={'center'} flexWrap={'wrap'} justifyContent={'space-around'} spacing={2}>
-                                <Typography variant="h4" color="initial" component={'h2'} sx={{ fontWeight: 600, color: 'primary.main' }}>Suallarınız var?</Typography>
-                                <Typography variant="body1" color="primary.main" sx={{}}>Formu doldurun. Yaxın zamanda sizinlə əlaqə saxlayacayıq.</Typography>
                                 <ContactForm />
                             </Stack>
                         </Grid>
