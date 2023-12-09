@@ -7,7 +7,6 @@ import HomeCustomers from "../components/HomeCustomers"
 import React from 'react'
 import ProductSingle from "../pages/ProductSingle"
 import Products from "../pages/Products"
-import ProductSingle from "../pages/ProductSingle"
 
 const WebRouting = () => {
     return (
