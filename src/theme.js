@@ -11,7 +11,8 @@ const theme = createTheme({
             light: 'rgba(67, 80, 114, 0.1)'
         },
         info: {
-            main: '#F4F4F4'
+            main: '#F4F4F4',
+            light: '#FFFFFF'
         },
     },
     typography: {

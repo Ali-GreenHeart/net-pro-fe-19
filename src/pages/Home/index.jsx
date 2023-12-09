@@ -6,7 +6,11 @@ import HomeAbout from "../../components/homeAbout"
 import React from 'react'
 import HomeCustomers from "../../components/HomeCustomers"
 import ProducsSwiper from '../../components/ProductsSwiper'
+import { Brands } from "../../components/Brand"
 import Footer from "../../components/Footer"
+import Gallery from "../../components/Gallery"
+import ContactForm from "../../components/ContactForm"
+import QuestionsH from "../../components/QuestionsH"
 
 const Home = () => {
     return (
@@ -61,7 +65,11 @@ const Home = () => {
                         }
                     </Grid>
                 </Container>
+                <br />
             </Box>
+            <Brands />
+            <Gallery />
+            <QuestionsH/>
             <Footer />
         </>
     )
