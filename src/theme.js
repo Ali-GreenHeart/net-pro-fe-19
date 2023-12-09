@@ -4,7 +4,7 @@ const theme = createTheme({
     palette: {
         primary: {
             main: '#435072',
-            light: 'rgba(86, 96, 122)'
+            light: 'rgb(86, 96, 122)'
         },
         secondary: {
             main: '#606F84',
@@ -12,7 +12,18 @@ const theme = createTheme({
         },
         info: {
             main: '#F4F4F4',
-            light:'#FFFFFF'
+            light: '#FFFFFF'
+        },
+    },
+    typography: {
+        h4: {
+            fontWeight: 600
+        },
+        h5: {
+            fontWeight: 600
+        },
+        body1: {
+            fontSize: 20
         }
     }
 })
