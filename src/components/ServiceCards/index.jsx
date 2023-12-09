@@ -17,8 +17,8 @@ const ServiceCards = ({ title, body, image }) => {
           sx={{ padding: 2, height: '270px', borderRadius: '30px' }}
         />
         <CardContent >
-        <Stack justifyContent={'space-around'} sx={{ minHeight: '250px' }}>
-            <Typography variant="h5" component="div" color="primary">
+          <Stack justifyContent={'space-around'} sx={{ minHeight: '250px' }}>
+            <Typography variant="h5" component="div" color="primary" sx={{ minHeight: { xs: '60px', sm: '100px', md: '100px', lg: '60px' } }}>
               {title}
             </Typography>
             <Divider sx={{ my: 1 }} />
