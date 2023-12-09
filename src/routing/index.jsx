@@ -5,6 +5,7 @@ import Contact from "../pages/Contact"
 import NetProIcon from "../components/netProIcon"
 import HomeCustomers from "../components/HomeCustomers"
 import React from 'react'
+import ProductSingle from "../pages/ProductSingle"
 import Products from "../pages/Products"
 import ProductSingle from "../pages/ProductSingle"
 
