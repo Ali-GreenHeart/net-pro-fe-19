@@ -55,6 +55,10 @@ const sections = [
             },
         ]
     },
+    {   to:'/gallery-blog',
+        route: 'Qaleriya ve Blog',
+       
+    },
     {
         to: "/contact",
         route: 'Əlaqə'
