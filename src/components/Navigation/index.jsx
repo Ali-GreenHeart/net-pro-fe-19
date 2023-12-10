@@ -25,16 +25,28 @@ const sections = [
         route: 'Məhsullar',
         subRoutes: [
             {
-                to: "/products",
-                route: 'Məhsullar',
+                to: "/products/uninterruptible-power-supplies",
+                route: 'Uninterruptible Power Supplies',
             },
             {
-                to: "/products1",
-                route: '2Məhsullar',
+                to: "/products/dc-power-systems",
+                route: 'DC Power Systems',
             },
             {
-                to: "/products2",
-                route: '3Məhsullar',
+                to: "/products/power-distribution",
+                route: 'Power Distribution',
+            },
+            {
+                to: "/products/industrial-ac-and-dc-systems",
+                route: 'Industrial AC and DC Systems',
+            },
+            {
+                to: "/products/static-transfer-switches",
+                route: 'Static Transfer Switches',
+            },
+            {
+                to: "/products/power-control-and-monitoring",
+                route: 'Power Control and Monitoring',
             },
         ]
     },
