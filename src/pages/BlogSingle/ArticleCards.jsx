@@ -5,9 +5,9 @@ import QueryBuilderIcon from '@mui/icons-material/QueryBuilder';
 const ArticleCards = ({ id, image, body }) => {
     return (
         <>
-            <Paper elevation={0} sx={{ display: 'flex' }} >
+            <Paper elevation={0} sx={{ display: {xs:'block',sm:'flex'} }} >
                 <Box>
-                    <img src={image} alt={`article ${id + 1}`} />
+                    <img src={image} alt={`article ${id + 1}`}/>
                 </Box>
                 <Box padding={'10px'}>
                     <Box sx={{ display: 'flex', flexFlow: 'row wrap', gap: 1, justifyContent: 'flex-start' }}>
