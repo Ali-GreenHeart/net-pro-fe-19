@@ -29,7 +29,7 @@ export default function BlogCards() {
     return (
         services.map(({ id, title, body }) => {
             return (
-                <Grid item key={id}>
+                <Grid item key={id} xs={12} sm={6} md={4}>
                     <Card sx={{ maxWidth: 345, m: 2 }}>
                         <CardActionArea>
                             <Link href={`/gallery-blog/blog/${title}`} underline="none">
