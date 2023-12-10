@@ -7,22 +7,24 @@ import QueryBuilderIcon from '@mui/icons-material/QueryBuilder';
 import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
 import { articles } from './articles';
 import ArticleCards from './ArticleCards';
+import Breadcumb from '../../components/Breadcumb';
 
 const BlogSingle = () => {
     const { slug } = useParams()
-    console.log(slug, services);
     const item = services.find(({ title }) => slug === title)
-    console.log(item);
 
     return (
         <PageContainer bannerTitle='Qalereya və Bloq'>
             <Container>
                 <Grid container sx={{ py: 3 }} spacing={2}>
-                    <Grid item xs={12} sm={6} lg={7}>
-                        <Box>
-                            <img src="/BlogSingleSource/Main.png" alt="blog main page" />
+                    <Grid item xs={12} md={6} lg={7}>
+                        <Box my={1}>
+                            <Breadcumb breadcumb={item.title}/>
                         </Box>
-                        <Stack flexDirection={'row'} justifyContent={'space-between'} sx={{ paddingRight: '15px', mt:1 }} >
+                        <Box style={{width:'100%'}}>
+                            <img src="/BlogSingleSource/Main.png" alt="blog main page" style={{width:'100%'}}/>
+                        </Box>
+                        <Stack flexDirection={'row'} justifyContent={'space-between'} sx={{mt:1 }} >
                             <Box sx={{ display: 'flex', flexFlow: 'row wrap', gap: 1, justifyContent: 'flex-start' }}>
                                 <QueryBuilderIcon fontSize='small' color='secondary' />
                                 <Typography variant="body2" color="text.secondary">
@@ -46,7 +48,7 @@ const BlogSingle = () => {
                         </Box>
 
                     </Grid>
-                    <Grid item xs={12} sm={6} lg={5}>
+                    <Grid item xs={12} md={6} lg={5}>
                         <Stack spacing={5}>
                             <Box>
                                 <Typography variant="h5" color="primary" sx={{ mb: 2 }}>Son məqalələr</Typography>
