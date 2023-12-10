@@ -1,0 +1,8 @@
+@media screen and (max-width:650px) {
+    .CardContainer{
+        flex-direction: column !important;
+  }
+  .deviceImg{
+    margin-left:16px;
+  }
+}
